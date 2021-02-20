@@ -1,0 +1,28 @@
+
+
+@function strip-unit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+      @return $number / ($number * 0 + 1);
+    }
+  
+    @return $number;
+}
+
+
+
+//Couleur de fond
+$base-font-size : 16px!default;
+
+@function rem($size, $base : $base-font-size){
+    @return 1rem * $size / strip-unit($base)
+}
+
+
+
+
+$font-primary : 'Roboto', sans-serif , 'Trebuchet MS', Arial, Helvetica, sans-serif;
+$font-snd : 'Shrikhand', cursive , 'Brush Script MT', Arial, Helvetica, cursive;
+
+
+
+

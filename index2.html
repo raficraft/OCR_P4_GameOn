@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Reservation</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="js/function.js" defer></script>
+    <script type="text/javascript" src="js/modal.js" defer></script>
+    <script type="text/javascript" src="js/controlForm.js" defer></script>
+
+
+
+  </head>
+  <body>
+
+
+    <!--  AJout de balsie sémantique HEDER NAV et ajout d'une div "wrapper"
+          Lien de navigation englobé dans une liste ordonnée
+          retrait des attribus width and height sur le logo
+          retrait des appels JS sur l'icone hamburger
+    -->
+
+
+
+    <header class="topnav" id="myTopnav">
+
+      <div class="header__wrapper">
+
+        <div class="header__logo">
+          <img alt="logo de l'entreprise GameOn" src="Logo.png"/>
+        </div>
+
+
+        <nav class="main-navbar shazam">
+          
+          <ul>
+            <li class="active"><a href="#">Accueil</a></li>
+            <li><a href="#">À propos</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Évènements passés</a></li>
+          </ul>
+        </nav>
+            <a href="#" class="hamburger__icon"><i class="fa fa-bars"></i></a>
+
+      </div>
+    </header>
+
+<!-- Ajout de balises sémantique -->
+
+<main class="main">
+
+
+    <section class="hero">
+
+      <h1 class="hero__headline">Marathon national de jeux vidéos</h1>
+
+      <article>
+        <p class="hero__text">Vous aimez jouer ? Notre prochain évènement gaming est ouvert aux réservations... Places limitées !</p>
+        <button class="btn btn--highRes" data-modal="openModal">Je m'inscris</button>
+      </article>
+      <p class="hero__img"><img src="./bg_img.jpg" alt="Victoire de gamer" /></p>
+      <button class="btn btn--smartphone" data-modal="openModal">Je m'inscris</button>
+
+    </section>
+
+
+
+</main>
+
+
+<footer>
+  <p class="copyrights">Copyright 2014 - 2020, GameOn Inc.</p>
+</footer>
+
+    <modal class="modalBox" data-modal="closeModal">
+
+
+    <section class="modalBox__wrapper" data-modal="closeModal">
+          <form id="reserve" name="reserve" method="post" action="js/validAjax.js">
+
+
+            <div class="formData formInput">
+              <label for="first">First name</label> 
+              <input class="text-control" type="text" id="first" name="first"  minlength="2" />
+              <small class="error__message" id="error__message--first">Test erreur message</small>
+            </div>
+
+            <div class="formData formInput">
+              <label for="last">Nom</label>
+              <input class="text-control"  type="text"  id="last"  name="last" />
+              <small class="error__message" id="error__message--last"></small>
+            </div>
+
+            <div class="formData formInput">
+              <label for="email">E-mail</label>
+              <input  class="text-control"  type="email"  id="email" name="email"/>
+              <small class="error__message" id="error__message--email"></small>
+            </div>
+
+            <div class="formData formInput">
+              <label for="birthdate">Date de naissance</label>
+              <input  class="text-control" type="date"  id="birthdate" name="birthdate"/>
+              <small class="error__message" id="error__message--birthdate"></small>
+            </div>
+
+            <div class="formData formInput">
+              <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label>
+              <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
+              <small class="error__message"  id="error__message--quantity"></small>
+            </div>
+
+
+
+            <div  class="formRadio">
+              <p class="text-label">Quelles villes ?</p>
+              <small class="error__message" id="error__message--location"></small>
+              <div class="formRadio__wrapper">
+                <label for="location1">
+                  <input  class="input__radio"  type="radio"  id="location1" name="location"  value="New York" checked/>
+                  <span class="input__radio--icon"></span> New York
+                </label >
+
+
+                <label for="location2">
+                  <input class="input__radio" type="radio"  id="location2" name="location"  value="San Francisco"/>
+                  <span class="input__radio--icon"></span>San Francisco
+                </label>
+
+
+                <label for="location3">
+                  <input class="input__radio"  type="radio" id="location3" name="location" value="Seattle"/>
+                  <span class="input__radio--icon"></span>Seattle
+                </label >
+
+                <label class="checkbox-label" for="location4">
+                  <input  class="input__radio" type="radio" id="location4" name="location" value="Chicago"/>
+                  <span class="input__radio--icon"></span>Chicago
+                </label>
+
+                <label class="checkbox-label" for="location5">
+                  <input class="input__radio" type="radio" id="location5" name="location" value="Boston"/>
+                  <span class="input__radio--icon"></span>Boston
+                </label>
+
+
+                <label class="checkbox-label" for="location6">
+                  <input class="input__radio" type="radio" id="location6" name="location" value="Portland"/>
+                  <span class="input__radio--icon"></span>Portland
+                </label>
+              </div>
+
+            </div>
+
+            <div class="formCheck">
+              <label  for="cgv" required>
+                <input class="input__check" type="checkbox" id="cgv" name="cgv" checked/>
+                <span class="input__check--icon"></span>
+                J'ai lu et accepté les conditions d'utilisation.
+              </label>
+              <small class="error__message" id="error__message--cgv"></small>
+        
+              <label for="getMail">
+                <input class="input__check" type="checkbox" id="getMail" name="getMail" />
+                <span class="input__check--icon"></span>
+                Je souhaite être prévenu des prochains évènements.
+              </label>
+            
+            </div>
+
+            <input class="btn" type="submit" class="button" value="C'est parti" data-modal="submit"/>
+
+          </form>
+    </section>
+
+    </modal>
+
+  </body>
+</html>

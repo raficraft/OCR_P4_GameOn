@@ -1,4 +1,5 @@
 validate = () => {
+
   // On récupère les champs de type text
   let inputsText = document.forms["reserve"].querySelectorAll(
     '.text-control, input[name="location"], input[name="cgv"]'
@@ -30,7 +31,8 @@ validate = () => {
           inputChange(true, suffix);
         }
 
-        break;
+        break; 
+
 
       case "email":
         if (!el.value.match(regexEmail)) {
@@ -48,7 +50,6 @@ validate = () => {
           showMessage(suffix, "Date invalide");
           inputChange(false, suffix);
         } else if (el.value.match(regexBirthDate)) {
-          console.log(checkAge(1778, 18, 100));
 
           let yearBirth = el.value.split('-')[0];
 
@@ -72,50 +73,57 @@ validate = () => {
           inputChange(true, suffix);
         }
 
-        //verfiier que la personne inscite à bien 18 ans et moins de 100 ans
+        //verfiier que la personne inscrite à bien + de 18 ans et moins de 100 ans
 
         break;
 
-      case "quantity":
-        console.log(el.value);
-        if (el.value !== "" && el.value >= 0 && el.value <= 99) {
-          console.log("qté ok");
-          showMessage(suffix, "");
-          inputChange(true, suffix);
-        } else {
-          console.log("erreur");
-          showMessage(suffix, "Nombre invalide");
-          inputChange(false, suffix);
-        }
-
-        break;
-
-      case "location":
-        if (checkRadio === false) {
-          if (el.checked === true) {
+        case "quantity":
+          if (el.value !== "" && el.value >= 0 && el.value <= 99) {
             showMessage(suffix, "");
-            checkRadio = true;
             inputChange(true, suffix);
           } else {
-            showMessage(suffix, "Veuillez choisir une ville");
+            showMessage(suffix, "Nombre invalide");
             inputChange(false, suffix);
           }
-        }
 
-        break;
+          break;
 
-      case "cgv":
-        if (el.checked === true) {
-          showMessage(suffix, "");
-          inputChange(true, suffix);
-        } else {
-          showMessage(suffix, "Veuillez valider les conditions d'utilisation");
-          inputChange(false, suffix);
-        }
+        //Contrôle des boutons radio
 
-        break;
+        case "location":
+          if (checkRadio === false) {
+            if (el.checked === true) {
+              showMessage(suffix, "");
+              checkRadio = true;
+              inputChange(true, suffix);
+            } else {
+              showMessage(suffix, "Veuillez choisir une ville");
+              inputChange(false, suffix);
+            }
+          }
+
+          break;
+        
+        //Contrôle de la checkbox CGV
+
+        case "cgv":
+          if (el.checked === true) {
+            showMessage(suffix, "");
+            inputChange(true, suffix);
+          } else {
+            showMessage(suffix, "Veuillez valider les conditions d'utilisation");
+            inputChange(false, suffix);
+          }
+
+          break;
     }
   });
 
   
 };
+
+
+//Reste à faire 
+
+//Reprendre le fichier CSS
+//Afficher correctement le message de validation et le bouton pour fermer ce dernier

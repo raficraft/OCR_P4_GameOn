@@ -1,0 +1,424 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+  font-family: "DM sans", sans-serif;
+}
+
+h1 {
+  font-family: "DM sans", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  position: relative;
+}
+
+header {
+  display: flex;
+  width: 100%;
+  background: white;
+  margin: auto;
+  padding: 0 1.875rem;
+}
+@media screen and (min-width: 768px) {
+  header {
+    max-width: 1239px;
+  }
+}
+
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin: 2.0625rem 0 4.75rem;
+  width: 100%;
+  z-index: 100;
+  background-color: white;
+}
+.header__wrapper .header__logo img {
+  height: 20px;
+}
+@media screen and (min-width: 768px) {
+  .header__wrapper .header__logo img {
+    height: 3.125rem;
+  }
+}
+.header__wrapper .shazam {
+  position: absolute;
+  z-index: -10;
+  background-color: white;
+  top: -140px;
+  right: 0;
+  flex: 1;
+}
+@media screen and (min-width: 768px) {
+  .header__wrapper .shazam {
+    position: unset;
+  }
+  .header__wrapper .shazam ul {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+  .header__wrapper .shazam ul li {
+    display: flex;
+    padding: 0.5rem 1rem;
+  }
+  .header__wrapper .shazam ul li.active {
+    background-color: #FE142F;
+    border-radius: 0.5rem;
+    height: 100%;
+  }
+  .header__wrapper .shazam ul li.active a {
+    color: white;
+    border-bottom: 1px solid white;
+  }
+  .header__wrapper .shazam ul li:last-child {
+    padding-right: 0;
+    margin: 0;
+  }
+  .header__wrapper .shazam ul li:last-child a {
+    margin-right: 0;
+  }
+  .header__wrapper .shazam ul a {
+    font-size: 1.125rem;
+    margin: 0 1rem;
+    color: black;
+    font-weight: bold;
+  }
+}
+.header__wrapper .hamburger__icon {
+  display: block;
+  color: black !important;
+}
+@media screen and (min-width: 768px) {
+  .header__wrapper .hamburger__icon {
+    display: none;
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  margin: 0 1.875rem;
+}
+@media screen and (min-width: 768px) {
+  .hero {
+    flex-direction: row;
+    justify-content: space-between;
+    height: 657px;
+    position: relative;
+    background-color: #232323;
+    max-width: 1239px;
+    border-radius: 0.5rem;
+    margin: auto;
+  }
+}
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 3.90625rem;
+  margin-bottom: 1.5rem;
+}
+@media screen and (min-width: 768px) {
+  .hero h1 {
+    position: absolute;
+    color: white;
+    font-size: 6rem;
+    line-height: 7.8125rem;
+    max-width: 70%;
+    top: 3.8125rem;
+    left: 3.5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .hero article {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 0 4.375rem 3.5rem;
+  }
+}
+.hero .hero__text {
+  padding-right: 0.8125rem;
+  padding-bottom: 0.8125rem;
+  width: 100%;
+  line-height: 17px;
+  font-family: "DM sans";
+}
+@media screen and (min-width: 768px) {
+  .hero .hero__text {
+    color: white;
+    font-size: 1.5rem;
+    line-height: 1.9375rem;
+    margin-bottom: 4.375rem;
+    padding: 0;
+  }
+}
+.hero .hero__img {
+  display: flex;
+}
+@media screen and (min-width: 768px) {
+  .hero .hero__img {
+    min-width: 59%;
+  }
+}
+.hero .hero__img img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.btn {
+  align-self: center;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: #FE142F;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: "DM Sans", sans-serif;
+  vertical-align: center;
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 1.8125rem;
+  margin-top: 1.75rem;
+  padding: 0.75rem 2rem;
+}
+.btn--highRes {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .btn--highRes {
+    display: block;
+    align-self: flex-start;
+    height: 3.4375rem;
+    font-size: 1.5625rem;
+    margin-bottom: 0rem;
+    padding: 0.625rem 1.625rem 0.875rem;
+    visibility: middle;
+  }
+}
+@media screen and (min-width: 768px) {
+  .btn--smartphone {
+    display: none;
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-size: 0.625rem;
+  margin-top: 1.75rem;
+  color: #FE142F;
+}
+@media screen and (min-width: 768px) {
+  footer {
+    justify-content: flex-start;
+    padding-left: 2.5rem;
+    margin-top: 6.1875rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  footer p {
+    line-height: 1.125rem;
+    font-size: 0.9375rem;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+  }
+}
+
+.modalBox {
+  display: none;
+  position: fixed;
+  top: 4.9375rem;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  z-index: 200;
+}
+@media screen and (min-width: 768px) {
+  .modalBox {
+    top: 0;
+    padding-top: 5.4375rem;
+    padding-bottom: 5.4375rem;
+  }
+}
+.modalBox__wrapper {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+.modalBox form {
+  background-color: #232323;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  padding: 2.375rem 1.875rem;
+}
+@media screen and (min-width: 768px) {
+  .modalBox form {
+    width: 536px;
+  }
+}
+.modalBox form .formInput {
+  display: flex;
+  flex-direction: column;
+}
+.modalBox form .formInput input {
+  padding: 1rem 1.25rem 1rem;
+  font-size: 1.125rem;
+  border-radius: 0.5rem;
+  margin: 0.625rem 0;
+  border: none;
+}
+.modalBox form .formInput .error__message {
+  font-size: 0.625rem;
+  color: #ff4e60;
+  font-family: "Roboto", sans-serif;
+  padding-bottom: 0.375rem;
+  display: none;
+}
+
+label, .text-label {
+  color: white;
+  font-family: "DM Sans", sans-serif;
+}
+
+.input__check {
+  background-color: #279e7a;
+}
+.input__check--icon {
+  background-color: #c4c4c4;
+  content: "";
+  height: 25px;
+  width: 25px;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 6px;
+}
+.input__check:checked + .input__check--icon {
+  background-color: #279e7a;
+  font-family: "Font Awesome 4 Free";
+  content: "";
+  color: white;
+  unicode-bidi: bidi-override;
+}
+
+.input__radio {
+  display: none;
+}
+.input__radio--icon {
+  content: "";
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 50%;
+  border: 2px solid #279e7a;
+  margin-right: 0.4375rem;
+}
+.input__radio:checked + .input__radio--icon {
+  background-color: #279e7a;
+  border: 1px solid #279e7a;
+}
+
+.formCheck {
+  display: flex;
+  flex-direction: column;
+}
+.formCheck label {
+  margin-bottom: 0.5rem;
+}
+
+.formRadio {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.25rem;
+}
+.formRadio label {
+  height: 24px;
+  margin-bottom: 0.5rem;
+  margin-left: 2.25rem;
+  font-weight: normal;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 24px;
+  font-size: 12px;
+  font-family: "DM Sans", Arial, Helvetica, sans-serif;
+}
+
+.text-label {
+  margin-bottom: 0.875rem;
+}
+
+/*# sourceMappingURL=style.css.map */

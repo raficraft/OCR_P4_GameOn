@@ -57,7 +57,7 @@
           <span class="close"></span>
           <div id ="modalBody" class="modal-body">
 
-            <form id="reserve" name="reserve" >
+            <form id="reserve" name="reserve" method="post" action="js/validAjax.js">
 
 
               <div class="formData formData-first">
@@ -92,8 +92,9 @@
               </div>
 
 
-              <p class="text-label">Quelles villes ?</p>
+
               <div  class="formData">
+                <p class="text-label">Quelles villes ?</p>
                 <small class="error__message" id="error__message--location"></small>
                 <input  class="checkbox-input"  type="radio"  id="location1" name="location"  value="New York" />
                 <label class="checkbox-label" for="location1">
@@ -161,7 +162,7 @@
       </p>
     </footer>
     <script type="text/javascript" src="js/function.js"></script>
-    <script type="text/javascript" src="js/modal.js"></script>
+    <script type="text/javascript" src="js/modal_old.js"></script>
     <script type="text/javascript" src="js/controlForm.js"></script>
   </body>
 </html>

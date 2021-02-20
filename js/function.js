@@ -5,17 +5,15 @@ function launchModal() {
 
 // Close modal form
 function closeModal() {
-    console.log(close);
   modalbg.style.display = "none";
 }
 
-function inputStyle(result, inputTarget) {
-  if (result === false) {
-    // on passe le champs en rouge
-  } else if (result === true) {
-    // on remets le style normal
-  }
-}
+/**
+ * Change le style du champs cible si une erreur est detecter
+ * @inputTarget {string} name de l'input correspondant
+ * @message {string}
+ */
+
 
 function showMessage(inputTarget, message) {
   document.getElementById("error__message--" + inputTarget).innerText = message;
@@ -23,10 +21,10 @@ function showMessage(inputTarget, message) {
 
 /**
  * Change le style du champs cible si une erreur est detecter
- * @param {bolean}
- * @param {string} id
+ * @state {boolean}
+ * @inputTarget {string} name de l'input correspondant
  */
-inputChange = (state, inputTarget) => {
+inputChange = (inputTarget,state) => {
 
   target = document.querySelector('input[name="'+inputTarget+'"]');
   targetBox = document.getElementById('error__message--'+inputTarget);
@@ -42,8 +40,9 @@ inputChange = (state, inputTarget) => {
 };
 
 /**
- * @param {number} yearOfBirth
- * @param {number}
+ * @yearOfBirth {number}  year format yyyy
+ * @lowLimit {number}
+ * @HightLimit {number}
  */
 
 function checkAge(yearOfBirth, lowLimit, hightLimit) {
@@ -57,27 +56,7 @@ function checkAge(yearOfBirth, lowLimit, hightLimit) {
   }
 }
 
-function confirmSubmit() {
-
-    console.log('on affiche la confiramtion');
-
-    let el = document.querySelector('body')
-    console.log(el);
-
-    el.innertHTML = '<div class="bground">'+
-                        '<div class="content">'+
-                            '<span class="close"></span>'+
-                                '<div class="modal-body">'+
-                                    '<h1>Merci ! Votre réservation a été reçue</h1>'+
-                                '</div>'+
-                        '</div>'+
-                    '</div>';
-
-console.log(el.innerHTML);
-
-
-
-}
+//Fonction à conserver pour de futur projet.
 
 function hasclass(selector) {
   var className = " " + selector + " ";
