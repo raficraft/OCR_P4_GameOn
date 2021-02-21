@@ -15,6 +15,7 @@ const regexBirthDate = /([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/i;
 
 let myJS = document.querySelectorAll('[data-modal]');
 let modal = document.querySelector('.modalBox')
+let menuSmartphone = document.querySelector('.shazam')
 
 
 console.log(myJS);
@@ -22,7 +23,7 @@ console.log(myJS);
 for (let i = 0 ; i < myJS.length; i++) {
   myJS[i].addEventListener('click', (e) => {
 
-    e.preventDefault();
+    
 
   //définie l'action entrprit sur le bouton
   let target = e.target;
@@ -40,8 +41,54 @@ for (let i = 0 ; i < myJS.length; i++) {
 
     case ('closeModal'):
       console.log('onFerme');
+      e.preventDefault();
       modal.style.display = "none";
     break;
+    
+    case ('submit'):
+      console.log('onValide');
+      e.preventDefault();
+      formValidate();
+
+        
+    // Si il n'y à plus de message d'erreur on considère que le 
+    // formulaire est valide
+    if (document.querySelectorAll("small.error__message").length > 0) {
+      e.preventDefault();
+      console.log('invalid');
+    } else {
+  
+      //Pour les besoins de la démo on schinte le comportement par défaut
+      e.preventDefault();
+      console.log('valid');
+    
+  
+      let el = document.getElementById("reserve");
+      el.innerHTML = `<span class="close" data-modal="closeModal"></span>
+                      <div class="submitSuccess">
+                        <header>
+                          <h1>Merci, Votre réservation a bien été enregistrée</h1> 
+                        </header>
+                        <button class="btn" value="close" data-modal="closeModal"/>close</button>
+                      </div>`;
+  
+      // Requête ajax, ne pas utilisez les données du script de validation
+      // pour des raisons de sécutité.
+    }
+
+
+
+    break;
+
+    case ('responsiveMenu'):
+      console.log('Shazam');
+      menuSmartphone.classList.toggle("shazam--responsive")
+     
+
+
+    break;
+
+
     
 
   }

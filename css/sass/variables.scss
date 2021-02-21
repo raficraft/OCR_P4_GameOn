@@ -1,8 +1,9 @@
-
+@use 'sass:math';
 
 @function strip-unit($number) {
     @if type-of($number) == 'number' and not unitless($number) {
-      @return $number / ($number * 0 + 1);
+
+      @return math.round($number / ($number * 0 + 1));
     }
   
     @return $number;
@@ -11,7 +12,7 @@
 
 
 //Couleur de fond
-$base-font-size : 16px!default;
+$base-font-size : 18px!default;
 
 @function rem($size, $base : $base-font-size){
     @return 1rem * $size / strip-unit($base)
@@ -22,6 +23,9 @@ $base-font-size : 16px!default;
 
 $font-primary : 'Roboto', sans-serif , 'Trebuchet MS', Arial, Helvetica, sans-serif;
 $font-snd : 'Shrikhand', cursive , 'Brush Script MT', Arial, Helvetica, cursive;
+
+
+
 
 
 

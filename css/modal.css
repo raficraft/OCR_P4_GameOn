@@ -161,9 +161,8 @@ main {
 }
 
 .bground {
-  display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 100;
   left: 0;
   top : 0;
   height: 100%;
@@ -179,7 +178,6 @@ main {
   .bground{
     padding-top:65px;
     background: transparent;
-    pointer-events: none;
   }
 }
 
@@ -423,11 +421,9 @@ input[data-error]::after {
   font-size: 16px;
 }
 .hero-section {
-  min-height: 93vh;
   border-radius: 10px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  overflow: hidden;
   box-shadow: 0 2px 7px 2px rgba(0, 0, 0, 0.2);
   margin-bottom: 10px;
 }
@@ -438,7 +434,7 @@ input[data-error]::after {
   color: #fff;
   position: relative;
   text-align: left;
-  min-width: 424px;
+  width: 424px;
 }
 .hero-content::after {
   content: "";
@@ -454,6 +450,7 @@ input[data-error]::after {
   z-index: 1;
 }
 .hero-headline {
+  width : 50%;
   font-size: 6rem;
   font-weight: normal;
   white-space: nowrap;
@@ -496,7 +493,28 @@ footer {
   padding-right: 2vw;
   margin: 0 20px;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 768px) {
+
+  .topnav{
+    padding : 33px 30px;
+    display : flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .topnav .icon {
+
+      color : #ff001b;
+  }
+
+  .header-logo {
+    height : 19px;
+  }
+
+  .header-logo img{
+    height : 19px;
+  }
+
   .hero-section {
     display: block;
     box-shadow: unset;
@@ -505,6 +523,8 @@ footer {
     background: #fff;
     color: #000;
     padding: 20px;
+    width : 100%;
+    padding : 0;
   }
   .hero-content::after {
     content: unset;
@@ -513,16 +533,21 @@ footer {
     display: none;
   }
   .hero-headline {
-    font-size: 4.5rem;
+    font-size: 2.5rem;
     white-space: normal;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 62px;
   }
   .hero-text {
     width: unset;
-    font-size: 1.5rem;
+    font-size: 1rem;
+    margin-top:1rem;
+    width : 100%;
   }
   .hero-img img {
     border-radius: 10px;
-    margin-top: 40px;
+    margin-top: 20px;
   }
   .hero-section > .btn-signup {
     display: block;
@@ -530,8 +555,9 @@ footer {
     padding: 12px 35px;
   }
   .copyrights {
-    margin-top: 50px;
+    margin-top : 29px;
     text-align: center;
+    font-size : 10px;
   }
 }
 

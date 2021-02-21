@@ -71,6 +71,7 @@ body {
   flex-direction: column;
   font-size: 16px;
   position: relative;
+  font-family: "DM sans";
 }
 
 header {
@@ -78,9 +79,10 @@ header {
   width: 100%;
   background: white;
   margin: auto;
-  padding: 0 1.875rem;
+  padding: 0 1.6666666667rem;
+  z-index: 100;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 767px) {
   header {
     max-width: 1239px;
   }
@@ -91,28 +93,63 @@ header {
   justify-content: space-between;
   align-items: center;
   position: relative;
-  margin: 2.0625rem 0 4.75rem;
+  padding: 1.8333333333rem 0 4.2222222222rem;
   width: 100%;
   z-index: 100;
   background-color: white;
 }
-.header__wrapper .header__logo img {
-  height: 20px;
+@media screen and (max-width: 767px) {
+  .header__wrapper {
+    padding-bottom: 27px;
+    padding-top: 27px;
+  }
 }
-@media screen and (min-width: 768px) {
+.header__wrapper .header__logo img {
+  height: 23px;
+}
+@media screen and (min-width: 767px) {
   .header__wrapper .header__logo img {
-    height: 3.125rem;
+    height: 2.7777777778rem;
   }
 }
 .header__wrapper .shazam {
   position: absolute;
   z-index: -10;
-  background-color: white;
   top: -140px;
   right: 0;
   flex: 1;
+  transition-duration: 1s;
+  transform: translateY(-140px);
 }
-@media screen and (min-width: 768px) {
+.header__wrapper .shazam ul {
+  display: flex;
+  flex-direction: column;
+}
+.header__wrapper .shazam li {
+  margin: 6px;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid #e2e2e2;
+  display: flex;
+}
+.header__wrapper .shazam li:hover {
+  background-color: #FE142F;
+}
+.header__wrapper .shazam li:hover a {
+  color: white;
+}
+.header__wrapper .shazam li a {
+  font-weight: bold;
+  color: black;
+  width: 100%;
+  font-size: 1.5rem;
+  padding: 3px 8px;
+}
+.header__wrapper .shazam--responsive {
+  transition-duration: 1s;
+  transform: translateY(219px);
+}
+@media screen and (min-width: 767px) {
   .header__wrapper .shazam {
     position: unset;
   }
@@ -142,17 +179,20 @@ header {
     margin-right: 0;
   }
   .header__wrapper .shazam ul a {
-    font-size: 1.125rem;
-    margin: 0 1rem;
+    font-size: 1rem;
+    margin: 0 0.8888888889rem;
     color: black;
     font-weight: bold;
   }
 }
 .header__wrapper .hamburger__icon {
-  display: block;
-  color: black !important;
+  color: #ff001b;
+  cursor: pointer;
 }
-@media screen and (min-width: 768px) {
+.header__wrapper .hamburger__icon i {
+  font-size: 1.5rem;
+}
+@media screen and (min-width: 767px) {
   .header__wrapper .hamburger__icon {
     display: none;
   }
@@ -166,9 +206,9 @@ main {
 .hero {
   display: flex;
   flex-direction: column;
-  margin: 0 1.875rem;
+  margin: 0 1.6666666667rem;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 767px) {
   .hero {
     flex-direction: row;
     justify-content: space-between;
@@ -181,51 +221,52 @@ main {
   }
 }
 .hero h1 {
-  font-size: 3rem;
-  font-weight: 500;
-  line-height: 3.90625rem;
+  font-family: "DM Sans", sans-serif;
+  font-size: 2.6666666667rem;
+  font-weight: bold;
+  line-height: 3.4722222222rem;
   margin-bottom: 1.5rem;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 767px) {
   .hero h1 {
     position: absolute;
     color: white;
-    font-size: 6rem;
-    line-height: 7.8125rem;
+    font-size: 5.3333333333rem;
+    line-height: 6.9444444444rem;
     max-width: 70%;
-    top: 3.8125rem;
-    left: 3.5rem;
+    top: 3.3888888889rem;
+    left: 3.1111111111rem;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 767px) {
   .hero article {
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 0 0 4.375rem 3.5rem;
+    padding: 0 0 3.8888888889rem 3.1111111111rem;
   }
 }
 .hero .hero__text {
-  padding-right: 0.8125rem;
-  padding-bottom: 0.8125rem;
+  padding-right: 0.7222222222rem;
+  padding-bottom: 1.1111111111rem;
   width: 100%;
   line-height: 17px;
   font-family: "DM sans";
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 767px) {
   .hero .hero__text {
     color: white;
-    font-size: 1.5rem;
-    line-height: 1.9375rem;
-    margin-bottom: 4.375rem;
+    font-size: 1.3333333333rem;
+    line-height: 1.7222222222rem;
+    margin-bottom: 3.8888888889rem;
     padding: 0;
   }
 }
 .hero .hero__img {
   display: flex;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 767px) {
   .hero .hero__img {
     min-width: 59%;
   }
@@ -238,59 +279,70 @@ main {
 
 .btn {
   align-self: center;
-  border-radius: 0.5rem;
+  border-radius: 0.4444444444rem;
   border: none;
   background-color: #FE142F;
   color: white;
-  font-size: 0.875rem;
+  font-size: 0.7777777778rem;
   font-weight: 500;
   font-family: "DM Sans", sans-serif;
-  vertical-align: center;
   text-align: center;
   cursor: pointer;
-  margin-bottom: 1.8125rem;
-  margin-top: 1.75rem;
-  padding: 0.75rem 2rem;
+  margin-bottom: 1.6111111111rem;
+  margin-top: 1.5555555556rem;
+  padding: 0.6666666667rem 1.7777777778rem;
+}
+@media screen and (max-width: 767px) {
+  .btn {
+    margin-bottom: 0;
+  }
 }
 .btn--highRes {
   display: none;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 767px) {
   .btn--highRes {
     display: block;
     align-self: flex-start;
-    height: 3.4375rem;
-    font-size: 1.5625rem;
+    height: 3.0555555556rem;
+    font-size: 1.3888888889rem;
     margin-bottom: 0rem;
-    padding: 0.625rem 1.625rem 0.875rem;
+    padding: 0.5555555556rem 1.4444444444rem 0.7777777778rem;
     visibility: middle;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 767px) {
   .btn--smartphone {
     display: none;
   }
+}
+.btn--form {
+  width: 141px;
+  margin-bottom: 0;
+  margin-top: 20px;
 }
 
 footer {
   display: flex;
   justify-content: center;
   align-content: center;
-  font-size: 0.625rem;
-  margin-top: 1.75rem;
+  font-size: 0.5555555556rem;
+  margin-top: 1.5555555556rem;
   color: #FE142F;
+  font-weight: bold;
+  font-family: "Roboto";
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 767px) {
   footer {
     justify-content: flex-start;
-    padding-left: 2.5rem;
-    margin-top: 6.1875rem;
+    padding-left: 2.2222222222rem;
+    margin-top: 5.5rem;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 767px) {
   footer p {
-    line-height: 1.125rem;
-    font-size: 0.9375rem;
+    line-height: 1rem;
+    font-size: 0.8333333333rem;
     font-weight: bold;
     font-family: "Roboto", sans-serif;
   }
@@ -299,18 +351,18 @@ footer {
 .modalBox {
   display: none;
   position: fixed;
-  top: 4.9375rem;
+  top: 79px;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: white;
   z-index: 200;
+  background-color: white;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 767px) {
   .modalBox {
     top: 0;
-    padding-top: 5.4375rem;
-    padding-bottom: 5.4375rem;
+    padding-top: 4.8333333333rem;
+    padding-bottom: 4.8333333333rem;
   }
 }
 .modalBox__wrapper {
@@ -323,9 +375,37 @@ footer {
   border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
-  padding: 2.375rem 1.875rem;
+  padding: 38px 30px 18px;
+  position: absolute;
 }
-@media screen and (min-width: 768px) {
+.modalBox form .close {
+  height: 13px;
+  width: 13px;
+  display: block;
+  z-index: 600;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 800;
+  cursor: pointer;
+}
+.modalBox form .close:before, .modalBox form .close:after {
+  position: absolute;
+  z-index: 1000;
+  height: 16px;
+  width: calc(3px * 0.7);
+  top: -1px;
+  left: 5px;
+  background-color: white;
+  content: "";
+}
+.modalBox form .close:after {
+  transform: rotate(45deg);
+}
+.modalBox form .close:before {
+  transform: rotate(135deg);
+}
+@media screen and (min-width: 767px) {
   .modalBox form {
     width: 536px;
   }
@@ -335,36 +415,63 @@ footer {
   flex-direction: column;
 }
 .modalBox form .formInput input {
-  padding: 1rem 1.25rem 1rem;
-  font-size: 1.125rem;
+  padding: 1rem 1.1111111111rem 1rem;
+  font-size: 1rem;
   border-radius: 0.5rem;
-  margin: 0.625rem 0;
+  margin: 0.5555555556rem 0 0;
   border: none;
+  width: 100%;
 }
 .modalBox form .formInput .error__message {
-  font-size: 0.625rem;
+  font-size: 0.5555555556rem;
   color: #ff4e60;
   font-family: "Roboto", sans-serif;
-  padding-bottom: 0.375rem;
+  padding-bottom: 0.3333333333rem;
   display: none;
+  content: "lol";
+  height: 12px;
+  display: block;
+  margin-top: 6px;
 }
 
 label, .text-label {
   color: white;
   font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+}
+
+/*Checkbox*/
+.formCheck {
+  display: flex;
+  flex-direction: column;
+}
+.formCheck label {
+  margin-bottom: 0.4444444444rem;
+  display: flex;
 }
 
 .input__check {
+  display: none;
   background-color: #279e7a;
+  /*chebock personnalisé*/
 }
 .input__check--icon {
   background-color: #c4c4c4;
   content: "";
-  height: 25px;
-  width: 25px;
+  height: 20px;
+  width: 20px;
   display: inline-block;
   vertical-align: middle;
   border-radius: 6px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+.input__check--icon i {
+  display: none;
+  transform: scale(0.8);
 }
 .input__check:checked + .input__check--icon {
   background-color: #279e7a;
@@ -373,52 +480,110 @@ label, .text-label {
   color: white;
   unicode-bidi: bidi-override;
 }
-
-.input__radio {
-  display: none;
+.input__check:checked + .input__check--icon i {
+  display: block;
+  transform: scale(0.8);
 }
-.input__radio--icon {
-  content: "";
-  height: 20px;
-  width: 20px;
-  display: inline-block;
-  vertical-align: middle;
-  border-radius: 50%;
-  border: 2px solid #279e7a;
-  margin-right: 0.4375rem;
-}
-.input__radio:checked + .input__radio--icon {
-  background-color: #279e7a;
-  border: 1px solid #279e7a;
+.input__check--text {
+  line-height: 20px;
+  font-size: 0.6666666667rem;
+  margin-left: 0.3333333333rem;
 }
 
-.formCheck {
-  display: flex;
-  flex-direction: column;
-}
-.formCheck label {
-  margin-bottom: 0.5rem;
-}
-
+/*Radio*/
 .formRadio {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.1111111111rem;
+}
+.formRadio__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 18px;
 }
 .formRadio label {
   height: 24px;
-  margin-bottom: 0.5rem;
-  margin-left: 2.25rem;
+  margin-bottom: 8px;
   font-weight: normal;
-  display: inline-block;
   vertical-align: middle;
   line-height: 24px;
   font-size: 12px;
   font-family: "DM Sans", Arial, Helvetica, sans-serif;
+  display: flex;
+  align-items: center;
+}
+.formRadio .input__radio {
+  display: none;
+}
+.formRadio .input__radio--icon {
+  content: "";
+  height: 26px;
+  width: 26px;
+  display: block;
+  border-radius: 50%;
+  border: 2px solid #c4c4c4;
+  position: relative;
+}
+@media screen and (max-width: 767px) {
+  .formRadio .input__radio--icon {
+    height: 20px;
+    width: 20px;
+  }
+}
+.formRadio .input__radio:checked + .input__radio--icon {
+  border: 1px solid #279e7a;
+}
+.formRadio .input__radio:checked + .input__radio--icon:before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  background-color: #279e7a;
+  display: block;
+  border-radius: 50%;
+  margin-top: 3px;
+  margin-left: 3px;
+}
+@media screen and (max-width: 767px) {
+  .formRadio .input__radio:checked + .input__radio--icon:before {
+    height: 14px;
+    width: 14px;
+    margin-top: 2px;
+    margin-left: 2px;
+  }
+}
+.formRadio .input__radio--text {
+  margin-right: 23px;
+  margin-left: 5px;
+}
+@media screen and (max-width: 767px) {
+  .formRadio .input__radio--text {
+    margin-right: 13px;
+  }
 }
 
-.text-label {
-  margin-bottom: 0.875rem;
+.submitSuccess {
+  display: flex;
+  height: 685px;
+  flex-direction: column;
+}
+.submitSuccess header {
+  background-color: #232323;
+}
+.submitSuccess header h1 {
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 52px;
+}
+
+@keyframes slideDown {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 79px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
