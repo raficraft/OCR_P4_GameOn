@@ -47,14 +47,14 @@
         <div class="hero-img">
           <img src="./bg_img.jpg" alt="img" />
         </div>
-        <button class="btn-signup modal-btn">
+        <button class="btn-signup modal-btn" data-modal="openModal">
           je m'inscris
         </button>
       </div>
 
-      <div class="bground">
+      <div class="bground" data-modal="closeModal">
         <div class="content">
-          <span class="close"></span>
+          <span class="close" data-modal="closeModal"></span>
           <div id ="modalBody" class="modal-body">
 
             <form id="reserve" name="reserve" method="post" action="js/validAjax.js">
@@ -148,7 +148,7 @@
               
               </div>
 
-              <input class="btn-submit" type="submit" class="button" value="C'est parti"/>
+              <input class="btn-submit" type="submit" class="button" value="C'est parti" data-modal="subModal"/>
 
             </form>
 
@@ -161,8 +161,8 @@
         Copyright 2014 - 2020, GameOn Inc.
       </p>
     </footer>
-    <script type="text/javascript" src="js/function.js"></script>
-    <script type="text/javascript" src="js/modal_old.js"></script>
-    <script type="text/javascript" src="js/controlForm.js"></script>
+    <script type="text/javascript" src="js/function.js" defer></script>
+    <script type="text/javascript" src="js/modal_old.js" defer></script>
+    <script type="text/javascript" src="js/controlForm.js" defer></script>
   </body>
 </html>

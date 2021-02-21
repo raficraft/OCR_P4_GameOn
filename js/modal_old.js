@@ -30,21 +30,29 @@ function editNav() {
   //execution de verification du formulaire à la validation
   
   document.forms["reserve"].addEventListener("submit", function (e) {
+    console.log('click');
   
     validate();
-  
   
     // Si il n'y à plus de message d'erreur on considère que le 
     // formulaire est valide
     if (document.querySelectorAll("small.error__message").length > 0) {
       e.preventDefault();
+      console.log('invalid');
     } else {
   
       //Pour les besoins de la démo on schinte le comportement par défaut
       e.preventDefault();
+      console.log('valid');
+    
   
-      let el = document.getElementById("reserve");
-      el.innerHTML = "<h1>Merci ! Votre réservation a été reçue</h1>";
+      let el = document.getElementById("modalBody");
+      el.innerHTML = `<div class="submitSuccess">
+                        <header>
+                        <h1>Merci! Votre réservation a été reçue</h1> 
+                        <header>
+                        <input class="btn-submit" type="submit" class="button" value="Close" data-modal="close"/>
+                      </div>`;
   
       // Requête ajax, ne pas utilisez les données du script de validation
       // pour des raisons de sécutité.
@@ -56,7 +64,7 @@ function editNav() {
     validate();
   });
   
-  
+ 
   // On pourrait aussi le faire avec un event "change"
   // il n'est pas pertinent de le faire au submit du formulaire 
   // pour des raison de sécurité évidente. 

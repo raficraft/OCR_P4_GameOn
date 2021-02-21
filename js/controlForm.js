@@ -16,6 +16,8 @@ validate = () => {
     // pour changer son style.
     let suffix = el.name;
 
+    console.log(suffix);
+
     switch (suffix) {
       case "first":
       case "last":
@@ -26,7 +28,7 @@ validate = () => {
             "Veullez saisir plus de 2 caractères alphabétiques"
           );
           inputChange(false, suffix);
-        } else if (el.value.length >= 2 && el.value.match(/^[a-zA-Z]+$/)) {
+        } else if (el.value.length >= 2 && el.value.match(/^[a-zA-Z]+$/)) {       
           showMessage(suffix, "");
           inputChange(true, suffix);
         }
@@ -100,7 +102,7 @@ validate = () => {
               showMessage(suffix, "Veuillez choisir une ville");
               inputChange(false, suffix);
             }
-          }
+        }
 
           break;
         

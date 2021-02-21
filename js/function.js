@@ -1,12 +1,20 @@
+
+
+
 // launch modal form
 function launchModal() {
   modalbg.style.display = "block";
 }
 
+
+
 // Close modal form
 function closeModal() {
   modalbg.style.display = "none";
 }
+
+
+
 
 /**
  * Change le style du champs cible si une erreur est detecter
@@ -24,7 +32,8 @@ function showMessage(inputTarget, message) {
  * @state {boolean}
  * @inputTarget {string} name de l'input correspondant
  */
-inputChange = (inputTarget,state) => {
+inputChange = (state,inputTarget) => {
+  
 
   target = document.querySelector('input[name="'+inputTarget+'"]');
   targetBox = document.getElementById('error__message--'+inputTarget);
@@ -32,9 +41,11 @@ inputChange = (inputTarget,state) => {
   if (state === false) {
     target.classList.add('input__error')
     targetBox.classList.add('error__message')
+    console.log('add');
   } else if (state === true) {
     target.classList.remove('input__error')
     targetBox.classList.remove('error__message')
+    console.log('remove');
   }
 
 };

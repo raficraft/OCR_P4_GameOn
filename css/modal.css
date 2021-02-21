@@ -165,12 +165,24 @@ main {
   position: fixed;
   z-index: 1;
   left: 0;
-  top: 79px;
+  top : 0;
   height: 100%;
   width: 100%;
   overflow: auto;
   background-color:white;
 }
+
+@media screen and (max-width : 768px){
+  .content{
+    padding-top : 65px;
+  }
+  .bground{
+    padding-top:65px;
+    background: transparent;
+    pointer-events: none;
+  }
+}
+
 
 .content {
   margin: 5% auto;
@@ -184,6 +196,7 @@ main {
   position: relative;
   color: #fff;
   padding-top: 10px;
+  min-height: 810px;
 }
 
 .modal-body {
