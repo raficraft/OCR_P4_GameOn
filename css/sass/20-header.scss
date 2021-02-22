@@ -49,6 +49,8 @@ header{
     }
 
     .shazam{
+
+        @media screen and(max-width:767px){
         position : absolute;
         z-index: -10;
         top : -140px;
@@ -57,49 +59,53 @@ header{
         transition-duration: 1s;
         transform: translateY(-140px);
 
-        ul{
-            display: flex;
-            flex-direction: column;
-            }
-            
-            li{
-               
-                margin : 6px;
-                background-color: white;
-                border-radius : 8px;
-                border : 1px solid #e2e2e2;
-                display: flex;
-
-         
-            &:hover{
-                background-color: #FE142F;   
-                a{
-                    color : white;
-                }             
-            }
-
-            a{
-                font-weight: bold;
-                color : black;
-                width : 100%;
-                font-size: 1.5rem;
-                padding : 3px 8px;
-            }
-            }
+      
         
 
         &--responsive{
             transition-duration: 1s;
             transform: translateY(219px);  
 
+            ul{
+                display: flex;
+                flex-direction: column;
+                }
+                
+                li{
+                   
+                    margin : 6px;
+                    background-color: white;
+                    border-radius : 8px;
+                    border : 1px solid #e2e2e2;
+                    display: flex;
+    
+             
+                &:hover{
+                    background-color: #FE142F;   
+                    a{
+                        color : white;
+                    }             
+                }
+    
+                a{
+                    font-weight: bold;
+                    color : black;
+                    width : 100%;
+                    font-size: 1.5rem;
+                    padding : 3px 8px;
+                }
+            }
+
         
         }
+    }
 
         @media screen and(min-width:767px){
             position: unset;
 
             ul{
                 display: flex;
+                flex-direction: row;
                 justify-content: flex-end;
                 flex-wrap: wrap;
                 
@@ -139,6 +145,8 @@ header{
                
             }
         }
+
+    
     }
 
     .hamburger__icon{
@@ -605,16 +613,3 @@ label,.text-label{
 
 
 
-
-  @keyframes slideDown {
-
-    0%{
-      top : 0;
-    }
-  
-    100%{
-  
-      top : 79px;
-    }
-  
-  }

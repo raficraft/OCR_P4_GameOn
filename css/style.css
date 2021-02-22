@@ -112,42 +112,44 @@ header {
     height: 2.7777777778rem;
   }
 }
-.header__wrapper .shazam {
-  position: absolute;
-  z-index: -10;
-  top: -140px;
-  right: 0;
-  flex: 1;
-  transition-duration: 1s;
-  transform: translateY(-140px);
-}
-.header__wrapper .shazam ul {
-  display: flex;
-  flex-direction: column;
-}
-.header__wrapper .shazam li {
-  margin: 6px;
-  background-color: white;
-  border-radius: 8px;
-  border: 1px solid #e2e2e2;
-  display: flex;
-}
-.header__wrapper .shazam li:hover {
-  background-color: #FE142F;
-}
-.header__wrapper .shazam li:hover a {
-  color: white;
-}
-.header__wrapper .shazam li a {
-  font-weight: bold;
-  color: black;
-  width: 100%;
-  font-size: 1.5rem;
-  padding: 3px 8px;
-}
-.header__wrapper .shazam--responsive {
-  transition-duration: 1s;
-  transform: translateY(219px);
+@media screen and (max-width: 767px) {
+  .header__wrapper .shazam {
+    position: absolute;
+    z-index: -10;
+    top: -140px;
+    right: 0;
+    flex: 1;
+    transition-duration: 1s;
+    transform: translateY(-140px);
+  }
+  .header__wrapper .shazam--responsive {
+    transition-duration: 1s;
+    transform: translateY(219px);
+  }
+  .header__wrapper .shazam--responsive ul {
+    display: flex;
+    flex-direction: column;
+  }
+  .header__wrapper .shazam--responsive li {
+    margin: 6px;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid #e2e2e2;
+    display: flex;
+  }
+  .header__wrapper .shazam--responsive li:hover {
+    background-color: #FE142F;
+  }
+  .header__wrapper .shazam--responsive li:hover a {
+    color: white;
+  }
+  .header__wrapper .shazam--responsive li a {
+    font-weight: bold;
+    color: black;
+    width: 100%;
+    font-size: 1.5rem;
+    padding: 3px 8px;
+  }
 }
 @media screen and (min-width: 767px) {
   .header__wrapper .shazam {
@@ -155,6 +157,7 @@ header {
   }
   .header__wrapper .shazam ul {
     display: flex;
+    flex-direction: row;
     justify-content: flex-end;
     flex-wrap: wrap;
   }
@@ -575,15 +578,6 @@ label, .text-label {
   font-weight: bold;
   text-align: center;
   line-height: 52px;
-}
-
-@keyframes slideDown {
-  0% {
-    top: 0;
-  }
-  100% {
-    top: 79px;
-  }
 }
 
 /*# sourceMappingURL=style.css.map */

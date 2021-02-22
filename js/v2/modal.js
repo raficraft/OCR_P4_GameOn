@@ -62,7 +62,7 @@ for (let i = 0 ; i < myJS.length; i++) {
       e.preventDefault();
       console.log('valid');
     
-  
+  /*
       let el = document.getElementById("reserve");
       el.innerHTML = `<span class="close" data-modal="closeModal"></span>
                       <div class="submitSuccess">
@@ -73,7 +73,7 @@ for (let i = 0 ; i < myJS.length; i++) {
                       </div>`;
   
       // Requête ajax, ne pas utilisez les données du script de validation
-      // pour des raisons de sécutité.
+      // pour des raisons de sécutité.*/
     }
 
 

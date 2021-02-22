@@ -21,12 +21,12 @@
     targetBox = document.getElementById('error__message--'+inputTarget);
   
     if (state === false) {
-      target.classList.add('input__error')
-      targetBox.classList.add('error__message')
+      target.classList.toggle('input__error')
+      targetBox.classList.toggle('error__message')
       console.log('add');
     } else if (state === true) {
-      target.classList.remove('input__error')
-      targetBox.classList.remove('error__message')
+      target.classList.toggle('input__error')
+      targetBox.classList.toggle('error__message')
       console.log('remove');
     }
   
