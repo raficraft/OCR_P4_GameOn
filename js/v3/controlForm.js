@@ -1,28 +1,70 @@
-validate = () => {
 
-  // On récupère les champs de type text
-  let inputsText = document.forms["reserve"].querySelectorAll(
-    '.text-control, input[name="location"], input[name="cgv"]'
-  );
+const formID = "reserve";
+const thisFormCondition = {
 
-  // Paramètre qui permettre de lever une exception
+    'first' : {
+      'cond' : {       
+          'min-length' : 2       
+      }
+    },
+    'last' : {
+      'cond' : {       
+          'min-length' : 2       
+      }
+    },
+    'email' : {
+      'cond' : {       
+          'regex' : regexEmail       
+      }
+    },
+    'birthDate' : {
+      'cond' : {       
+         0 :{
+           'regex' : regexBirthDate,
+           'operator' : '&&'
+         },
+         1:{
+           'cond' : 18,
+           'operator' : '&&'          
+         },
+         2:{
+          'cond' : 100          
+        }      
+      }
+    },
+    
+
+
+};
+
+
+
+
+ // On récupère les champs de type text
+ let inputsText = document.forms[formID].querySelectorAll(
+  '.text-control, input[name="location"], input[name="cgv"]'
+);
+
+
+console.log(inputsText);
+// On stocke la longueur du tableau dans une variable pour ne pas la 
+// redemander à chaque tour de boucle.
+for (let i = 0 , inputLength = inputsText.length ; i < inputLength; i++) {
+
+  inputsText[i].addEventListener('input', (e) => {
+
+ // Paramètre qui permettre de lever une exception
   // pour schinter la boucler dès qu'elle trouve un bouton radio "checked"
   let checkRadio = false;
-
-  inputsText.forEach((el) => {
-    // on recupère l'attribut "name", qui servira à cibler  la balise .error_message
-    // qui contiendra le message d'erreur.
-    // Permet aussi de cibler l'input attribut (name) correspondant
-    // pour changer son style.
-    let suffix = el.name;
-
-    console.log(suffix);
+  
+    const el = inputsText[i]
+    const suffix = el.getAttribute('name')
 
     switch (suffix) {
       case "first":
       case "last":
         //Longueur minimal de 2 caractère et value de type "string"
-        if (el.value.length <= 2 || !el.value.match(/^[a-zA-Z]+$/)) {
+        if (el.value.length <= 2 && !el.value.match(/^[a-zA-Z]+$/)) {
           showMessage(
             suffix,
             "Veullez saisir plus de 2 caractères alphabétiques"
@@ -119,13 +161,14 @@ validate = () => {
 
           break;
     }
-  });
 
+   
   
+  });
 };
 
+const controlInputText = (name,cond) =>{
 
-//Reste à faire 
+console.log('on check les input text');
 
-//Reprendre le fichier CSS
-//Afficher correctement le message de validation et le bouton pour fermer ce dernier
+}

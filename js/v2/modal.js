@@ -53,7 +53,7 @@ for (let i = 0 ; i < myJS.length; i++) {
         
     // Si il n'y à plus de message d'erreur on considère que le 
     // formulaire est valide
-    if (document.querySelectorAll("small.error__message").length > 0) {
+    if (document.querySelectorAll("span.error__message").length > 0) {
       e.preventDefault();
       console.log('invalid');
     } else {
@@ -62,7 +62,7 @@ for (let i = 0 ; i < myJS.length; i++) {
       e.preventDefault();
       console.log('valid');
     
-  /*
+ 
       let el = document.getElementById("reserve");
       el.innerHTML = `<span class="close" data-modal="closeModal"></span>
                       <div class="submitSuccess">
@@ -73,7 +73,7 @@ for (let i = 0 ; i < myJS.length; i++) {
                       </div>`;
   
       // Requête ajax, ne pas utilisez les données du script de validation
-      // pour des raisons de sécutité.*/
+      // pour des raisons de sécutité.
     }
 
 
@@ -113,7 +113,7 @@ document.forms["reserve"].addEventListener("submit", function (e) {
 
   // Si il n'y à plus de message d'erreur on considère que le 
   // formulaire est valide
-  if (document.querySelectorAll("small.error__message").length > 0) {
+  if (document.querySelectorAll("span.error__message").length > 0) {
     e.preventDefault();
   } else {
 

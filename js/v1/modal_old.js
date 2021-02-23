@@ -36,7 +36,7 @@ function editNav() {
   
     // Si il n'y à plus de message d'erreur on considère que le 
     // formulaire est valide
-    if (document.querySelectorAll("span.error__message").length > 0) {
+    if (document.querySelectorAll(".error__message").length > 0) {
       e.preventDefault();
       console.log('invalid');
     } else {

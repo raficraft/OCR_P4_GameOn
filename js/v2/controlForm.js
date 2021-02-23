@@ -10,7 +10,7 @@ formValidate = () => {
     let checkRadio = false;
   
     inputsText.forEach((el) => {
-      // on recupère l'attribut "name", qui servira à cibler  la balise small
+      // on recupère l'attribut "name", qui servira à cibler  la balise .error_message
       // qui contiendra le message d'erreur.
       // Permet aussi de cibler l'input attribut (name) correspondant
       // pour changer son style.
