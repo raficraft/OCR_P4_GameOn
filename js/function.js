@@ -48,6 +48,34 @@
       return true;
     }
   }
+
+
+formSuccess = ()=>{
+       // Si il n'y à plus de message d'erreur on considère que le 
+    // formulaire est valide
+    if (document.querySelectorAll("span.error__message").length > 0) {
+     
+      console.log('invalid');
+    } else {
+  
+      //Pour les besoins de la démo on schinte le comportement par défaut
+     
+      console.log('valid');
+    
+ 
+      let el = document.getElementById("reserve");
+      el.innerHTML = `<span class="close" data-modal="closeModal"></span>
+                      <div class="submitSuccess">
+                        <header>
+                          <h1>Merci, Votre réservation a bien été enregistrée</h1> 
+                        </header>
+                        <button class="btn" value="close" data-modal="closeModal"/>close</button>
+                      </div>`;
+  
+      // Requête ajax, ne pas utilisez les données du script de validation
+      // pour des raisons de sécutité.
+    }
+}
   
 
   

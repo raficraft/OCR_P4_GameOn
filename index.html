@@ -9,9 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap" rel="stylesheet">
-    <script type="text/javascript" src="js/v2/function.js" defer></script>
-    <script type="text/javascript" src="js/v2/modal.js" defer></script>
-    <script type="text/javascript" src="js/v2/controlForm.js" defer></script>
+    <script type="text/javascript" src="js/function.js" defer></script>
+    <script type="text/javascript" src="js/modal.js" defer></script>
+    <script type="text/javascript" src="js/controlForm.js" defer></script>
 
 
 
@@ -62,7 +62,7 @@
         <p class="hero__text">Vous aimez jouer ? Notre prochain évènement gaming est ouvert aux réservations... Places limitées !</p>
         <button class="btn btn--highRes" data-modal="openModal">Je m'inscris</button>
       </article>
-      <p class="hero__img"><img src="./bg_img.jpg" alt="Victoire de gamer" /></p>
+      <p class="hero__img"><img src="/img/bg_img.jpg" alt="Victoire de gamer" /></p>
       <button class="btn btn--smartphone" data-modal="openModal">Je m'inscris</button>
 
     </section>
@@ -87,38 +87,38 @@
             <div class="formData formInput">
               <label for="first">First name</label> 
               <input class="text-control" type="text" id="first" name="first"  minlength="2" />
-              <span class="message" id="error__message--first"></span>
+              <span class="message error_message" id="error__message--first"></span>
             </div>
 
             <div class="formData formInput">
               <label for="last">Nom</label>
               <input class="text-control"  type="text"  id="last"  name="last" />
-              <span class="message" id="error__message--last"></span>
+              <span class="message error_message" id="error__message--last"></span>
             </div>
 
             <div class="formData formInput">
               <label for="email">E-mail</label>
               <input  class="text-control"  type="email"  id="email" name="email"/>
-              <span  class="message" id="error__message--email"></span>
+              <span  class="message error_message" id="error__message--email"></span>
             </div>
 
             <div class="formData formInput">
               <label for="birthdate">Date de naissance</label>
               <input class="text-control" type="date"  id="birthdate" name="birthdate"/>
-              <span class="message" id="error__message--birthdate"></span>
+              <span class="message error_message" id="error__message--birthdate"></span>
             </div>
 
             <div class="formData formInput">
               <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label>
               <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
-              <span class="message" id="error__message--quantity"></span>
+              <span class="message error_message" id="error__message--quantity"></span>
             </div>
 
 
 
             <div  class="formRadio">
               <p class="text-label">Quelles villes ?</p>
-              <span class="message" id="error__message--location"></span>
+              <span class="message error_message" id="error__message--location"></span>
               <div class="formRadio__wrapper">
                 <label for="location1">
                   <input  class="input__radio"  type="radio"  id="location1" name="location"  value="New York" checked/>
@@ -168,7 +168,7 @@
                 <span class="input__check--icon"><i class="fas fa-check"></i></span>
                 <span class='input__check--text'>J'ai lu et accepté les conditions d'utilisation.</span>
               </label>
-              <span class="message" id="error__message--cgv"></span>
+              <span class="message error_message" id="error__message--cgv"></span>
         
               <label for="getMail">
                 <input class="input__check" type="checkbox" id="getMail" name="getMail" />

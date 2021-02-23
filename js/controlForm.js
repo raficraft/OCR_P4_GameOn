@@ -120,7 +120,10 @@ formValidate = () => {
             break;
       }
     });
-  
+
+
+
+    formSuccess()
     
   };
   
