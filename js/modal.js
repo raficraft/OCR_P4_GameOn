@@ -1,4 +1,4 @@
-
+console.log(document.querySelectorAll(".error__message").length );
 
 
 // regex Email
@@ -23,15 +23,16 @@ console.log(myJS);
 for (let i = 0 ; i < myJS.length; i++) {
   myJS[i].addEventListener('click', (e) => {
 
-    
+    e.stopPropagation();
+
+    console.log('on boucle '+i);
 
   //définie l'action entrprit sur le bouton
   let target = e.target;
   console.log(target);
   let action = target.getAttribute("data-modal")
   console.log('click');
-
-  console.log(action);
+  console.log('on active cette action : '+action);
   switch(action){
     case ('openModal'):
       console.log('onOuvre');
@@ -46,7 +47,7 @@ for (let i = 0 ; i < myJS.length; i++) {
     break;
     
     case ('submit'):
-      console.log('onValide');
+      console.log('onTestLaValidation');
       e.preventDefault();
       formValidate();
 
@@ -55,9 +56,6 @@ for (let i = 0 ; i < myJS.length; i++) {
     case ('responsiveMenu'):
       console.log('Shazam');
       menuSmartphone.classList.toggle("shazam--responsive")
-     
-
-
     break;
 
   }

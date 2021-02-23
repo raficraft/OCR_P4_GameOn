@@ -21,13 +21,11 @@
     targetBox = document.getElementById('error__message--'+inputTarget);
   
     if (state === false) {
-      target.classList.toggle('input__error')
-      targetBox.classList.toggle('error__message')
-      console.log('add');
+      target.classList.add('input__error')
+      targetBox.classList.add('error__message')
     } else if (state === true) {
-      target.classList.toggle('input__error')
-      targetBox.classList.toggle('error__message')
-      console.log('remove');
+      target.classList.remove('input__error')
+      targetBox.classList.remove('error__message')
     }
   
   };
@@ -53,9 +51,11 @@
 formSuccess = ()=>{
        // Si il n'y à plus de message d'erreur on considère que le 
     // formulaire est valide
-    if (document.querySelectorAll("span.error__message").length > 0) {
+
+
+    if (document.querySelectorAll(".error__message").length > 0) {
      
-      console.log('invalid');
+      console.error('invalid');
     } else {
   
       //Pour les besoins de la démo on schinte le comportement par défaut
@@ -74,6 +74,8 @@ formSuccess = ()=>{
   
       // Requête ajax, ne pas utilisez les données du script de validation
       // pour des raisons de sécutité.
+
+    
     }
 }
   
