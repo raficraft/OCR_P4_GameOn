@@ -14,23 +14,23 @@ formValidate = () => {
       // qui contiendra le message d'erreur.
       // Permet aussi de cibler l'input attribut (name) correspondant
       // pour changer son style.
-      let suffix = el.name;
+      let inputName = el.name;
   
-      console.log(suffix);
+      console.log(inputName);
   
-      switch (suffix) {
+      switch (inputName) {
         case "first":
         case "last":
           //Longueur minimal de 2 caractère et value de type "string"
           if (el.value.length <= 2 || !el.value.match(/^[a-zA-Z]+$/)) {
             showMessage(
-              suffix,
+              inputName,
               "Veullez saisir plus de 2 caractères alphabétiques"
             );
-            inputChange(false, suffix);
+            inputChange(false, inputName);
           } else if (el.value.length >= 2 && el.value.match(/^[a-zA-Z]+$/)) {       
-            showMessage(suffix, "");
-            inputChange(true, suffix);
+            showMessage(inputName, "");
+            inputChange(true, inputName);
           }
   
           break; 
@@ -38,54 +38,53 @@ formValidate = () => {
   
         case "email":
           if (!el.value.match(regexEmail)) {
-            showMessage(suffix, "Email invalide");
-            inputChange(false, suffix);
+            showMessage(inputName, "Email invalide");
+            inputChange(false, inputName);
           } else {
-            showMessage(suffix, "");
-            inputChange(true, suffix);
+            showMessage(inputName, "");
+            inputChange(true, inputName);
           }
   
           break;
   
         case "birthdate":
           if (!el.value.match(regexBirthDate)) {
-            showMessage(suffix, "Date invalide");
-            inputChange(false, suffix);
+            showMessage(inputName, "Date invalide");
+            inputChange(false, inputName);
           } else if (el.value.match(regexBirthDate)) {
   
             let yearBirth = el.value.split('-')[0];
   
             // Controle secondaire pour n'autoriser l'inscription
-            // que les personnes ce trouvant dans un age limite
+            // qu'aux personnes ce trouvant dans un âge limite
   
             if (checkAge(yearBirth, 18, 100) === true) {
-              showMessage(suffix, "");
-              inputChange(false, suffix);
+              showMessage(inputName, "");
+              inputChange(false, inputName);
             } else {
               showMessage(
-                suffix,
-                "Vous n'avez pas l'age requis pour vous inscrire (min:18ans / max:100ans)"
+                inputName,
+                "Vous n'avez pas l'âge requis pour vous inscrire. (min:18ans / max:100ans)"
               );
-              inputChange(false, suffix);
+              inputChange(false, inputName);
   
               break;
             }
   
-            showMessage(suffix, "");
-            inputChange(true, suffix);
+            showMessage(inputName, "");
+            inputChange(true, inputName);
           }
   
-          //verfiier que la personne inscrite à bien + de 18 ans et moins de 100 ans
   
           break;
   
           case "quantity":
             if (el.value !== "" && el.value >= 0 && el.value <= 99) {
-              showMessage(suffix, "");
-              inputChange(true, suffix);
+              showMessage(inputName, "");
+              inputChange(true, inputName);
             } else {
-              showMessage(suffix, "Nombre invalide");
-              inputChange(false, suffix);
+              showMessage(inputName, "Nombre invalide");
+              inputChange(false, inputName);
             }
   
             break;
@@ -95,12 +94,12 @@ formValidate = () => {
           case "location":
             if (checkRadio === false) {
               if (el.checked === true) {
-                showMessage(suffix, "");
+                showMessage(inputName, "");
                 checkRadio = true;
-                inputChange(true, suffix);
+                inputChange(true, inputName);
               } else {
-                showMessage(suffix, "Veuillez choisir une ville");
-                inputChange(false, suffix);
+                showMessage(inputName, "Veuillez choisir une ville");
+                inputChange(false, inputName);
               }
           }
   
@@ -110,11 +109,11 @@ formValidate = () => {
   
           case "cgv":
             if (el.checked === true) {
-              showMessage(suffix, "");
-              inputChange(true, suffix);
+              showMessage(inputName, "");
+              inputChange(true, inputName);
             } else {
-              showMessage(suffix, "Veuillez valider les conditions d'utilisation");
-              inputChange(false, suffix);
+              showMessage(inputName, "Veuillez valider les conditions d'utilisation");
+              inputChange(false, inputName);
             }
   
             break;
