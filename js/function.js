@@ -38,6 +38,9 @@
   
   function checkAge(yearOfBirth, lowLimit, hightLimit) {
     //current year
+
+    // essayer de check l'age avec le timestamp
+    // gettime
     let thisYear = new Date().getFullYear();
   
     let gap = thisYear - yearOfBirth;

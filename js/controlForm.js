@@ -28,7 +28,7 @@ formValidate = () => {
               "Veullez saisir plus de 2 caractères alphabétiques"
             );
             inputChange(false, inputName);
-          } else if (el.value.length >= 2 && el.value.match(/^[a-zA-Z]+$/)) {       
+          } else {       
             showMessage(inputName, "");
             inputChange(true, inputName);
           }
@@ -51,7 +51,7 @@ formValidate = () => {
           if (!el.value.match(regexBirthDate)) {
             showMessage(inputName, "Date invalide");
             inputChange(false, inputName);
-          } else if (el.value.match(regexBirthDate)) {
+          } else  {
   
             let yearBirth = el.value.split('-')[0];
   
