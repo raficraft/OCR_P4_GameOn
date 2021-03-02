@@ -1,19 +1,6 @@
-console.log(document.querySelectorAll(".error__message").length );
-
-
-// regex Email
-const regexEmail = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/g;
-
-// regex birthdate
-// Bien que le formulaire présente la date au format dd/mm/yyyy
-// La valeur retourné ce présente au format yyyy-mm-dd
-const regexBirthDate = /([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/i;
-
-//execution de verification du formulaire à la validation
-
-//On récupère tous les éléments interactif
 
 let myJS = document.querySelectorAll('[data-modal]');
+
 let modal = document.querySelector('.modalBox')
 let menuSmartphone = document.querySelector('.shazam')
 
@@ -29,11 +16,10 @@ for (let i = 0 ; i < myJS.length; i++) {
 
   //définie l'action entrprit sur le bouton
   let target = e.target;
-  console.log(target);
   let action = target.getAttribute("data-modal")
-  console.log('click');
-  console.log('on active cette action : '+action);
+
   switch(action){
+       
     case ('openModal'):
       console.log('onOuvre');
       modal.style.display ='block';
@@ -50,7 +36,6 @@ for (let i = 0 ; i < myJS.length; i++) {
       console.log('onTestLaValidation');
       e.preventDefault();
       formValidate();
-
     break;
 
     case ('responsiveMenu'):

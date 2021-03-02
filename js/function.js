@@ -52,21 +52,14 @@
 
 
 formSuccess = ()=>{
-       // Si il n'y à plus de message d'erreur on considère que le 
-    // formulaire est valide
-
-
-    if (document.querySelectorAll(".error__message").length > 0) {
-     
-      console.error('invalid');
-    } else {
+      // Si il n'y à plus de message d'erreur on considère que le 
+      // formulaire est valide
+    if (document.querySelectorAll(".error__message").length === 0) {
   
-      //Pour les besoins de la démo on schinte le comportement par défaut
-     
-      console.log('valid');
-    
- 
+      // Formulaire
       let el = document.getElementById("reserve");
+
+      //On affiche le message de validation
       el.innerHTML = `<span class="close" data-modal="closeModal"></span>
                       <div class="submitSuccess">
                         <header>
@@ -76,9 +69,7 @@ formSuccess = ()=>{
                       </div>`;
   
       // Requête ajax, ne pas utilisez les données du script de validation
-      // pour des raisons de sécutité.
-
-    
+      // pour des raisons de sécutité.    
     }
 }
   

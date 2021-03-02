@@ -1,5 +1,20 @@
 formValidate = () => {
 
+
+  
+    // regex Email
+    const regexEmail = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/g;
+
+    // regex birthdate
+    // Bien que le formulaire présente la date au format dd/mm/yyyy
+    // La valeur retourné ce présente au format yyyy-mm-dd
+    const regexBirthDate = /([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/i;
+
+    //execution de verification du formulaire à la validation
+
+    //On récupère tous les éléments interactif
+
+
     // On récupère les champs de type text
     let inputsText = document.forms["reserve"].querySelectorAll(
       '.text-control, input[name="location"], input[name="cgv"]'
@@ -22,7 +37,7 @@ formValidate = () => {
         case "first":
         case "last":
           //Longueur minimal de 2 caractère et value de type "string"
-          if (el.value.length <= 2 || !el.value.match(/^[a-zA-Z]+$/)) {
+          if (el.value.length <= 2 || !el.value.match(/^[a-zA-Z\d\-\s]+$/)) { 
             showMessage(
               inputName,
               "Veullez saisir plus de 2 caractères alphabétiques"
@@ -93,14 +108,16 @@ formValidate = () => {
   
           case "location":
             if (checkRadio === false) {
+
               if (el.checked === true) {
                 showMessage(inputName, "");
-                checkRadio = true;
                 inputChange(true, inputName);
+                checkRadio = true;
               } else {
                 showMessage(inputName, "Veuillez choisir une ville");
                 inputChange(false, inputName);
               }
+
           }
   
             break;
