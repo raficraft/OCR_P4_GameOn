@@ -9,9 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap" rel="stylesheet">
-    <script type="text/javascript" src="js/function.js" defer></script>
-    <script type="text/javascript" src="js/modal.js" defer></script>
-    <script type="text/javascript" src="js/controlForm.js" defer></script>
+    <script  src="js/function.js" defer></script>
+    <script  src="js/modal.js" defer></script>
+    <script  src="js/controlForm.js" defer></script>
 
 
 
@@ -32,7 +32,7 @@
       <div class="header__wrapper">
 
         <div class="header__logo">
-         <a href="index.html"></a><img alt="logo de l'entreprise GameOn" src="Logo.png"/></a>
+         <a href="index.html"><img alt="logo de l'entreprise GameOn" src="Logo.png"/></a>
         </div>
 
         <a href="#" class="hamburger__icon"><i class="fa fa-bars" data-modal="responsiveMenu"></i></a>
@@ -59,7 +59,7 @@
       <h1 class="hero__headline">Marathon national de jeux vidéos</h1>
 
       <article>
-        <p class="hero__text">Vous aimez jouer ? Notre prochain évènement gaming est ouvert aux réservations... Places limitées !</p>
+        <h2 class="hero__text">Vous aimez jouer ? Notre prochain évènement gaming est ouvert aux réservations... Places limitées !</h2>
         <button class="btn btn--highRes" data-modal="openModal">Je m'inscris</button>
       </article>
       <p class="hero__img"><img src="img/bg_img.jpg" alt="Victoire de gamer" /></p>
@@ -76,10 +76,14 @@
   <p class="copyrights">Copyright 2014 - 2020, GameOn Inc.</p>
 </footer>
 
-    <modal class="modalBox" data-modal="closeModal">
-      <!-- Fermeture de la modal-->      
+
+
+  <!-- Formulaire de contact-->   
+
+  <div class="modalBox" data-modal="closeModal">
       
-      <section class="modalBox__wrapper" data-modal="closeModal">
+      <!-- Fermeture de la modal-->   
+      <div class="modalBox__wrapper" data-modal="closeModal">
         <form id="reserve" name="reserve" method="post" action="js/validAjax.js">
           <span class="close" data-modal="closeModal"></span>
 
@@ -163,7 +167,7 @@
             </div>
 
             <div class="formCheck">
-              <label  for="cgv" required>
+              <label  for="cgv">
                 <input class="input__check" type="checkbox" id="cgv" name="cgv" checked/>
                 <span class="input__check--icon"><i class="fas fa-check"></i></span>
                 <span class='input__check--text'>J'ai lu et accepté les conditions d'utilisation.</span>
@@ -178,12 +182,12 @@
             
             </div>
 
-            <input class="btn btn--form" type="submit" class="button" value="C'est parti" data-modal="submit"/>
+            <input class="btn btn--form" type="submit" value="C'est parti" data-modal="submit"/>
 
           </form>
-    </section>
+      </div>
 
-    </modal>
+  </div>
 
   </body>
 </html>

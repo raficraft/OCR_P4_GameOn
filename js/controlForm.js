@@ -31,7 +31,6 @@ formValidate = () => {
       // pour changer son style.
       let inputName = el.name;
   
-      console.log(inputName);
   
       switch (inputName) {
         case "first":
@@ -68,6 +67,8 @@ formValidate = () => {
             inputChange(false, inputName);
           } else  {
   
+
+
             let yearBirth = el.value.split('-')[0];
   
             // Controle secondaire pour n'autoriser l'inscription
