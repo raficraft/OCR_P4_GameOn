@@ -37,4 +37,4 @@ Bref, si l'on devait s'en tenir aux directives. Il suffirait de simplement "reto
 
 ## Liens d'ébergements
 
-- Projet GameOn réalisé par Raphaël Parodi et hébergé sur [GitPages](https://raficraft.github.io/raphaelparodi_P4_08022021/)
+- Projet GameOn réalisé par Raphaël Parodi et hébergé sur [GitPages](https://raficraft.github.io/OCR_P4_GameOn/)
